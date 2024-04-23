@@ -14,9 +14,14 @@ if %errorlevel% equ 0 (
     :: Делаем коммит с заданным сообщением
     git commit -m "%commit_message%"
     
-    echo Коммит с названием "%commit_message%" успешно создан.
+    :: Отправляем коммит в удаленное хранилище
+    git push origin master
+    
+    echo Коммит с названием "%commit_message%" успешно отправлен в удаленное хранилище.
 ) else (
     echo Ошибка: скрипт не находится в репозитории Git.
 )
+
+pause
 
 endlocal
